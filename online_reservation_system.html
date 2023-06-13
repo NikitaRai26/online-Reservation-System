@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Online Reservation System</title>
+  <style>
+    .container {
+      max-width: 400px;
+      margin: 0 auto;
+      text-align: center;
+    }
+    h1 {
+      margin-bottom: 20px;
+    }
+    .input-group {
+      margin-bottom: 10px;
+    }
+    label {
+      display: block;
+      margin-bottom: 5px;
+    }
+    .input-field {
+      width: 100%;
+      padding: 5px;
+    }
+    .submit-btn {
+      margin-top: 10px;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>Online Reservation System</h1>
+
+    <form id="reservation-form">
+      <div class="input-group">
+        <label for="name">Name:</label>
+        <input type="text" id="name" class="input-field" required>
+      </div>
+
+      <div class="input-group">
+        <label for="date">Date:</label>
+        <input type="date" id="date" class="input-field" required>
+      </div>
+
+      <div class="input-group">
+        <label for="time">Time:</label>
+        <input type="time" id="time" class="input-field" required>
+      </div>
+
+      <button class="submit-btn" type="submit">Submit Reservation</button>
+    </form>
+  </div>
+
+  <script>
+    document.getElementById('reservation-form').addEventListener('submit', function(event) {
+      event.preventDefault(); // Prevent form submission
+
+      var name = document.getElementById('name').value;
+      var date = document.getElementById('date').value;
+      var time = document.getElementById('time').value;
+
+      // Process the reservation logic here
+      processReservation(name, date, time);
+    });
+
+    function processReservation(name, date, time) {
+      // Perform validation and other necessary operations here
+      // For demonstration purposes, let's just display a confirmation message
+
+      var confirmation = "Reservation Details:\n" +
+        "Name: " + name + "\n" +
+        "Date: " + date + "\n" +
+        "Time: " + time;
+
+      alert(confirmation);
+    }
+  </script>
+</body>
+</html>
